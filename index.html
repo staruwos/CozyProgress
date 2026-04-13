@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Work Tracker 🍃</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+       
+        <div id="setup-screen">
+            <p class="subtitle" id="setup-subtitle">Register your new island job!</p>
+            
+            <div class="input-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" placeholder="Villager Name">
+            </div>
+            <div class="input-group">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" placeholder="Nook Inc.">
+            </div>
+            <div class="input-group">
+                <label for="startDate">Start Date</label>
+                <input type="date" id="startDate">
+            </div>
+            <div class="input-group">
+                <label for="salary">Monthly Salary ($)</label>
+                <input type="number" id="salary" placeholder="5000">
+            </div>
+            <div class="input-group" style="display: flex; gap: 15px;">
+                <div style="flex: 1;">
+                    <label for="hours">Work Hours ⏱️</label>
+                    <input type="number" id="hours" placeholder="8" value="8">
+                </div>
+                <div style="flex: 1;">
+                    <label for="startTime">Start Time 🌅</label>
+                    <input type="time" id="startTime" value="09:00">
+                </div>
+            </div>
+            
+            <button id="start-btn">Start Working!</button>
+        </div>
+
+        <div id="dashboard-screen" class="hidden">
+            <h2 id="greeting">Welcome!</h2>
+            <p class="subtitle">Working hard at <strong id="display-company"></strong></p>
+
+            <div class="stat-card" style="border-color: var(--daily-accent); border-width: 3px;">
+                <div class="stat-title">Today's Shift (Includes 1hr Lunch)</div>
+                <p class="subtitle" id="shift-hours" style="margin: 5px 0 10px 0; font-size: 14px;">00:00 - 00:00</p>
+                
+                <div class="progress-container">
+                    <div class="progress-fill daily-fill" id="daily-progress-bar"></div>
+                </div>
+                <p style="font-weight: 900; font-size: 24px; color: var(--daily-accent);" id="daily-earned">$0.00 / $0.00</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-title">Total Bells Earned Since Start</div>
+                <div class="stat-value" id="total-earned">$0.00</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-title">This Month's Progress</div>
+                <div class="progress-container">
+                    <div class="progress-fill" id="progress-bar"></div>
+                </div>
+                <p style="font-weight: 700;" id="month-earned">$0.00 / $0.00</p>
+            </div>
+
+            <div class="stat-card split-stats">
+                <div>
+                    <div class="stat-title">Per Work Day</div>
+                    <div class="stat-value small-val" id="daily-rate">$0.00</div>
+                </div>
+                <div>
+                    <div class="stat-title">Per Hour</div>
+                    <div class="stat-value small-val" id="hourly-rate">$0.00</div>
+                </div>
+            </div>
+
+            <button class="secondary" id="edit-btn">Edit Passport Details ✍️</button>
+            <button class="secondary" id="reset-btn" style="margin-top: 5px; color: #e76f51;">Move to a new Island (Reset)</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
