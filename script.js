@@ -59,7 +59,7 @@ function editData() {
 }
 
 function resetData() {
-    if(confirm("Are you sure you want to delete your save data? Tom Nook won't be happy!")) {
+    if(confirm("Are you sure you want to delete your save data?")) {
         localStorage.removeItem('cozyWorkData');
         location.reload(); 
     }
